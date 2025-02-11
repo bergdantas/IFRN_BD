@@ -1,0 +1,42 @@
+--Crio a tabela carro
+CREATE TABLE IF NOT EXISTS carro (
+	idCarro SERIAL PRIMARY KEY,
+	marca VARCHAR(10) NOT NULL,
+	modelo VARCHAR(10) NOT NULL,
+	ano CHAR(4) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS pessoa(
+	idPessoa SERIAL PRIMARY KEY,
+	nome varchar(30) NOT NULL	
+);
+
+CREATE TABLE IF NOT EXISTS telefone(
+	numero char(11) NOT NULL,
+	pessoaId int NOT NULL,
+	CONSTRAINT fk_pessoaId FOREIGN KEY (pessoaId) REFERENCES pessoa(idPessoa)
+);
+
+
+--apago a tabela carro
+DROP TABLE carro;
+DROP TABLE telefone;
+DROP TABLE pessoa;
+
+
+-- altero a tabela carro
+ALTER TABLE carro
+--ADD COLUMN cor varchar(15) not null; --adiciona atributo cor 
+--DROP COLUMN cor;
+
+SELECT * FROM carro;
+SELECT * FROM pessoa;
+
+SELECT * from pessoa, telefone WHERE pessoa.idpessoa = telefone.pessoaid;
+
+INSERT INTO pessoa(nome) VALUES ('João Roberto');
+INSERT INTO pessoa(nome) VALUES ('Maria Joaquina');
+INSERT INTO telefone(numero,pessoaId) VALUES ('84996354784', 1);
+INSERT INTO telefone(numero,pessoaId) VALUES ('83985421587', 2);
+INSERT INTO telefone(numero,pessoaId) VALUES ('84985421658', 2);
+
