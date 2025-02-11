@@ -21,7 +21,6 @@ CREATE TABLE IF NOT EXISTS carro (
 
 --crio a tabela endereço
 CREATE TABLE endereco(
-	idEndereco SERIAL PRIMARY KEY,
 	cidade VARCHAR(15) NOT NULL,
 	rua VARCHAR(15) NOT NULL,
 	numero VARCHAR(5) NOT NULL,
