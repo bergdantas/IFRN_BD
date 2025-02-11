@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS carro (
 );
 
 --crio a tabela endereço
-CREATE TABLE endereco(
+CREATE TABLE IF NOT EXISTS endereco(
 	cidade VARCHAR(15) NOT NULL,
 	rua VARCHAR(15) NOT NULL,
 	numero VARCHAR(5) NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE endereco(
 );
 
 --crio a tabela vende
-CREATE TABLE vende(
+CREATE TABLE IF NOT EXISTS vende(
 	idVenda SERIAL PRIMARY KEY,
 	idPessoa INT NOT NULL,
 	idCarro INT NOT NULL,
