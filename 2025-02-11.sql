@@ -56,6 +56,7 @@ INSERT INTO vendedor(nome) VALUES ('João Dias');
 INSERT INTO vendedor(nome) VALUES ('Marluce Josefina');
 INSERT INTO vendedor(nome) VALUES ('Jorge Felix');
 
+--inserindo telefones na base de dados
 INSERT INTO telefone(idPessoa, numero) VALUES (1, '84956254875');
 INSERT INTO telefone(idPessoa, numero) VALUES (1, '84985458754');
 INSERT INTO telefone(idPessoa, numero) VALUES (2, '84985425478');
