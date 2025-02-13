@@ -54,3 +54,36 @@ INSERT INTO vende(idPessoa, idCarro, dataDaVenda, valor) VALUES
 (2, 8, '2024-01-17', 27000.00),  -- Marluce Josefina vendeu Hyundai HB20
 (3, 9, '2024-01-18', 22000.00),  -- Jorge Felix vendeu Renault Kwid
 (1, 10, '2024-01-19', 30000.00); -- João Dias vendeu Fiat Argo
+
+--seleciona o ID e NOME do vendedor
+SELECT idPessoa, nome FROM vendedor;
+
+--seleciona tudo do carro
+SELECT * FROM carro;
+
+--seleciona todos os telefones
+SELECT numero FROM telefone;
+
+--SELECIONAR A CIDADE DE TODOS OS VENDEDORES ?
+SELECT cidade FROM endereco;
+
+--SELECIONAR O ANO DOS CARROS ?
+SELECT ano FROM carro;
+
+--SELECIONAR O CARRO QUE SEJA 2020 OU MAIS NOVO ?
+SELECT * FROM carro
+	WHERE ano > '2019';
+
+--SELECIONAR OS TELEFONES DA PESSOA, CUJO ID é 2
+SELECT numero FROM telefone
+	WHERE idPessoa = 2;
+
+--FAZENDO CONSULTAS ENVOLVENDO MAIS DE UMA TABELA
+SELECT vendedor.nome, vende.valor FROM vendedor, vende
+	WHERE vendedor.idPessoa = vende.idPessoa
+
+--FAZENDO CONSULTAS ENVOLVENDO MAIS DE UMA TABELA
+SELECT vendedor.nome, SUM(vende.valor) FROM vendedor, vende --SUM, COUNT, AVG
+	WHERE vendedor.idPessoa = vende.idPessoa
+		GROUP BY vendedor.nome
+			ORDER BY SUM(vende.valor);
